@@ -1,0 +1,37 @@
+﻿@model Social
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <span class="text-danger">@ViewBag.Message</span>
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Category</h4>
+                        <form asp-controller="Social" asp-action="Update" class="forms-sample" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Name</label>
+                                <input maxlength="" minlength="" type="text" class="form-control" asp-for="Name">
+                                <span class="text-danger my-1" asp-validation-for="Name"></span>
+
+                                <label for="exampleInputUsername1">Url</label>
+                                <input type="text" class="form-control" asp-for="Url">
+                                <span class="text-danger my-1" asp-validation-for="Url"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary me-2">Update</button>
+                            <a asp-controller="Social" asp-action="Index" class="btn btn-light">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationPartial" />
+}
